@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Percentage Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Beauty Percentage Calculator</h1>
+    
+    <!-- Two buttons for user interaction -->
+    <div class="button-container">
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" accept="image/*" style="display: none;">
+            <button type="button" id="upload-button" onclick="document.getElementById('file-input').click();">Upload Image</button>
+        </form>
+        <button id="webcam-button">Start Webcam</button>
+    </div>
+
+    <!-- Webcam feed, captured frame, and canvas for capturing -->
+    <div id="webcam-container" style="display: none;">
+        <div style="display: flex; justify-content: center; align-items: flex-start;">
+            <div>
+                <video id="video" width="640" height="480" autoplay></video>
+                <button id="capture">Capture</button>
+            </div>
+            <div style="margin-left: 20px;">
+                <h3>Captured Frame</h3>
+                <img id="captured-frame" width="320" height="240" style="display: none; border: 2px solid #333; border-radius: 5px;">
+            </div>
+        </div>
+        <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+    </div>
+
+    <!-- Display the uploaded image -->
+    <div id="uploaded-image-container" style="margin-top: 20px; display: none;">
+        <h3>Uploaded Image</h3>
+        <img id="uploaded-image" width="320" height="240" style="border: 2px solid #333; border-radius: 5px;">
+    </div>
+
+    <!-- Display the beauty percentage -->
+    <div id="result">
+        <h2>Beauty Percentage: <span id="beauty-percentage">N/A</span>%</h2>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
