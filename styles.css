@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+#upload-button, #webcam-button, #capture {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#upload-button:hover, #webcam-button:hover, #capture:hover {
+    background-color: #45a049;
+}
+
+video {
+    margin-top: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#beauty-percentage {
+    color: #4CAF50;
+    font-weight: bold;
+}
